@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <meta name="theme-color" content="#34495e">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/toolkit.css">
+    <link rel="stylesheet" href="assets/css/test.css">
+    <link rel="stylesheet" href="assets/css/scrollbars.css">
+    <title>Chattr</title>
+</head>
+
+<body class="bpi">
+    <nav class="ck rj aeq ro vq app-navbar unselectable">
+        <a class="e" href="#">
+            <img src="assets/img/logo.png" alt="brand">
+        </a>
+        <div class="collapse f" id="navbarResponsive">
+            <ul class="navbar-nav ain">
+            </ul>
+        </div>
+    </nav>
+    <div id="container">
+        <div id="login">
+            <span class="unselectable">Insira seu usuário:</span>
+            <form id="submit">
+                <input type="text" id="nickname" class="selectable" />
+            </form>
+        </div>
+        <div id="chat">
+            <div id="pnlPerfil">
+                <!-- <div class="name" id="name">Teste</div>
+                <div class="last" id="time">00:00</div> -->
+            </div>
+            <div id="pnlMsg">
+                <ol class="chat selectable" id="mensagens"></ol>
+            </div>
+
+            <nav class="navbar navbar-default navbar-fixed-bottom">
+                <input class="textarea selectable" type="text" placeholder="Digite aqui" id="textarea" />
+                <img class="send" src="assets/img/send.png" alt="brand">
+            </nav>
+        </div>
+    </div>
+    <script>
+        if (typeof module === 'object') {
+            window.module = module;
+            module = undefined;
+        }
+    </script>
+    <script src="assets/js/socket.io.js"></script>
+    <script src="assets/js/jquery.min.js"></script>
+    <script>
+        if (window.module) module = window.module;
+    </script>
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>
