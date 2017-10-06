@@ -6,7 +6,7 @@ $(document).ready(function() {
 
     $("#submit").submit(function(e) {
         e.preventDefault();
-        socket = io.connect("https://dks-chattr-gitwebserver.herokuapp.com");
+        conectarSocket();
         $("#login").fadeOut();
         $("#chat").fadeIn();
         var name = $("#nickname").val();
@@ -33,30 +33,34 @@ $(document).ready(function() {
         }
     });
 
-    socket.on("login", function(color) {
-        if (ready) {
-            clientColor = color;
-        }
-    });
+    function conectarSocket() {
+        socket = io.connect("https://dks-chattr-gitwebserver.herokuapp.com");
 
-    socket.on("update", function(msg, color) {
-        if (ready) {
-            IsOnBottom();
-            $('.chat').append('<li class="info" style="background-color: ' + color + '">' + msg + '</li>')
-            if (onBottom)
-                Scroll();
-        }
-    });
+        socket.on("login", function(color) {
+            if (ready) {
+                clientColor = color;
+            }
+        });
 
-    socket.on("chat", function(client, msg, color) {
-        if (ready) {
-            var time = new Date();
-            IsOnBottom();
-            $(".chat").append('<li class="other"><div class="msg"><span style="color: ' + color + '">' + client + ':</span><p>' + msg + '</p><time>' + time.getHours() + ':' + time.getMinutes() + '</time></div></li>');
-            if (onBottom)
-                Scroll();
-        }
-    });
+        socket.on("update", function(msg, color) {
+            if (ready) {
+                IsOnBottom();
+                $('.chat').append('<li class="info" style="background-color: ' + color + '">' + msg + '</li>')
+                if (onBottom)
+                    Scroll();
+            }
+        });
+
+        socket.on("chat", function(client, msg, color) {
+            if (ready) {
+                var time = new Date();
+                IsOnBottom();
+                $(".chat").append('<li class="other"><div class="msg"><span style="color: ' + color + '">' + client + ':</span><p>' + msg + '</p><time>' + time.getHours() + ':' + time.getMinutes() + '</time></div></li>');
+                if (onBottom)
+                    Scroll();
+            }
+        });
+    }
 
     function IsOnBottom() {
         var objDiv = document.getElementById("pnlMsg");
