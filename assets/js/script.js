@@ -1,11 +1,12 @@
 $(document).ready(function() {
-    var socket = io.connect("http://dks-chattr.appspot.com:80");
+    var socket = null;
     var ready = false;
     var clientColor = '';
     var onBottom = false;
 
     $("#submit").submit(function(e) {
         e.preventDefault();
+        socket = io.connect("https://dks-chattr-gitwebserver.herokuapp.com");
         $("#login").fadeOut();
         $("#chat").fadeIn();
         var name = $("#nickname").val();
