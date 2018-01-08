@@ -62,19 +62,20 @@ body {
 
 #pnlPerfil {
     position: absolute;
-    width: 20% !important;
+    width: 160px !important;
     height: 100%;
     overflow-y: auto;
     overflow-x: hidden;
     white-space: nowrap;
     -webkit-overflow-scrolling: touch;
+    line-height: 20px;
     background-color: var(--sidebarColor);
 }
 
 #pnlMsg {
     position: absolute;
-    left: 20%;
-    width: 80%;
+    left: 160px;
+    width: 100%;
     height: 100%;
     overflow-y: auto;
     overflow-x: hidden;
@@ -86,7 +87,7 @@ input.textarea {
     bottom: 0px;
     left: 0px;
     right: 0px;
-    width: 97%;
+    width: 100%;
     height: 50px;
     z-index: 99;
     background: #ECF0F1;
@@ -94,19 +95,6 @@ input.textarea {
     outline: none;
     padding: 10px;
     color: #666;
-    font-weight: 400;
-}
-
-.send {
-    position: fixed;
-    bottom: -6px;
-    right: 0px;
-    width: 3%;
-    z-index: 99;
-    border: none;
-    outline: none;
-    padding: 12px;
-    background-color: #ECF0F1;
     font-weight: 400;
 }
 
